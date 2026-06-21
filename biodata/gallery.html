@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Gallery</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="biodata_style.css">
+
+      <style>
+    html { scroll-behavior: smooth; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      align-items: center;
+      text-align: left;
+    }
+    .hero-text { text-align: left; }
+    .tags { justify-content: flex-start; }
+
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .photo-box {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 1 / 1;
+      background: #f5f5f5;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .photo-box:hover img {
+      transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .photo-box img { cursor: pointer; }
+
+    /* LIGHTBOX CSS */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+      </style>
+    </head>
+    <body id="top">
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Gallery</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="biodata_resume.html">Biodata</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="family.html">Family</a></li>
+    </ul>
+  </div>
+</nav>
+
+</nav> <div class="audio-container">
+    <span class="audio-label">🎵 BGM:</span>
+    <audio controls autoplay loop id="myAudio">
+        <source src="audio/smileflower.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="avatar" style="background: #fdf0eb; border-color: #c48a7a; font-size: 2.5rem;">📷</div>
+    <div class="hero-text">
+      <h1>Gallery</h1>
+      <p class="nickname">Moments captured by Wan Nurfatihah</p>
+      <p style="font-size: 0.9rem; color: #444; margin-top: 0.5rem;">This is a page I like because there is a lot of memory in one picture.</p>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <a href="#friends" class="tag" style="text-decoration:none;">👯 Friends</a>
+        <a href="#cousin" class="tag" style="text-decoration:none;">🥰 Cousin</a>
+        <a href="#random" class="tag" style="text-decoration:none;">🌸 Random</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRIENDS -->
+  <section class="section" id="friends">
+    <div class="section-label">Friends</div>
+    <div class="photo-grid">
+      <div class="photo-box"><img src="images/friends1.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/friends2.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/friends3.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/friends4.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/friends5.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/friends6.jpg" alt="Friends" onclick="openLightbox(this.src)"></div>
+    </div>
+  </section>
+
+  <!-- COUSIN -->
+  <section class="section" id="cousin">
+    <div class="section-label">Cousin</div>
+    <div class="photo-grid">
+      <div class="photo-box"><img src="images/cousin1.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/cousin2.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/cousin3.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/cousin4.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/cousin5.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/cousin6.jpg" alt="Cousin" onclick="openLightbox(this.src)"></div>
+    </div>
+  </section>
+
+  <!-- RANDOM -->
+  <section class="section" id="random">
+    <div class="section-label">Random</div>
+    <div class="photo-grid">
+      <div class="photo-box"><img src="images/random.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/dekan.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/class.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/biro.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/dbankers.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+      <div class="photo-box"><img src="images/perkad.jpg" alt="Random" onclick="openLightbox(this.src)"></div>
+    </div>
+  </section>
+
+</div>
+<a href="#top">Back to top</a>
+<br>
+
+<footer>
+  Gallery · Wan Nurfatihah Binti Ibnan @ Abanan · UiTM Rembau, Negeri Sembilan
+</footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
+
+<script>
+  function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+
+    </body>
+</html>

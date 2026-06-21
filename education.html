@@ -1,0 +1,237 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Education</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="biodata_style.css">
+
+    <style>
+    html { scroll-behavior: smooth; }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Education rows */
+    .edu-row {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .edu-photo {
+      flex: 0 0 220px;
+      height: 180px;
+      background: #faf7f6;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .edu-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0; left: 0;
+      cursor: pointer;
+    }
+
+    .edu-info {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .edu-level {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    .edu-place {
+      font-size: 0.85rem;
+      color: #444;
+    }
+    .edu-year {
+      display: inline-block;
+      font-size: 0.73rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: #EEF2F7;
+      font-weight: 500;
+      margin-top: 0.25rem;
+      width: fit-content;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 580px) {
+      .edu-row { flex-direction: column; }
+      .edu-photo { width: 100%; flex: 0 0 180px; }
+    }
+    </style>
+    </head>
+  <body>
+
+  <nav>
+  <div class="nav-inner">
+    <span class="nav-name">Education</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="biodata_resume.html">Biodata</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  </nav> <div class="audio-container">
+    <span class="audio-label">🎵 BGM:</span>
+    <audio controls autoplay loop id="myAudio">
+        <source src="audio/smileflower.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+  <div class="page">
+
+  <div class="hero">
+    <div class="avatar" style="background: #fdf0eb; border-color: #c48a7a; font-size: 2.5rem;">🎓</div>
+    <div class="hero-text">
+      <h1>Education</h1>
+      <p class="nickname">Academic journey of Wan Nurfatihah</p>
+      <div class="tags">
+        <a href="#diploma" class="tag" style="text-decoration:none;">🎓 Diploma</a>
+        <a href="#pre-diploma" class="tag" style="text-decoration:none;">📚 Pre-Diploma</a>
+        <a href="#certificate" class="tag" style="text-decoration:none;">🏫 Certificate</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="education">
+    <div class="section-label">Education History</div>
+    <div class="edu-row" id="diploma">
+      <div class="edu-photo" id="slot-1">
+        <img src="images/uitm.jpg" alt="Diploma UiTM Rembau" onclick="openLightbox(this.src)">
+      </div>
+      <div class="edu-info">
+        <div class="edu-level">Diploma</div>
+        <div class="edu-sublevel1">Diploma in Information Management (CDIM110)</div>
+        <div class="edu-place">📍 UiTM Rembau, Negeri Sembilan</div>
+        <div class="edu-year">2024 – Present</div>
+        <p>Currently, I am studying at UiTM Rembau, Negeri Sembilan in Information Management. I chose this course out of 3 options during my pre-diploma because I wanted to take a course that I was more interested in and I didn't want my health to get worse because I have health problems. I have successfully overcome many challenges from semester 1 to 5 and there are bittersweet moments in the diploma.</p>
+      </div>
+    </div>
+
+    <div class="edu-row" id="pre-diploma">
+      <div class="edu-photo" id="slot-2">
+        <img src="images/pradip.jpg" alt="Pre-Diploma UiTM Perak" onclick="openLightbox(this.src)">
+      </div>
+      <div class="edu-info">
+        <div class="edu-level">Pre-Diploma</div>
+        <div class="edu-sublevel2">Pre-Diploma in Commerce</div>
+        <div class="edu-place">📍 UiTM Seri Iskandar, Perak</div>
+        <div class="edu-year">2023 – 2024</div>
+        <p>I chose to take the pre-diploma because I wanted to take a diploma at UiTM. That way, it would make it easier for me to learn a lot before entering UiTM. In fact, I have many good friends and they gave me the freedom to be myself. I became the assistant class president during the pre-diploma because I was one of the older female students.In the pre-diploma, I studied for 6 months, which is one semester, and it was a fun experience for me. The pre-diploma taught me to be respectful, to be polite and to speak to the lecturers.</p>
+      </div>
+    </div>
+
+    <div class="edu-row" id="certificate">
+      <div class="edu-photo" id="slot-3">
+        <img src="images/kk.jpg" alt="Sabak Bernam Community College" onclick="openLightbox(this.src)">
+      </div>
+      <div class="edu-info">
+        <div class="edu-level">Certificate</div>
+        <div class="edu-sublevel3">Food Processing and Food Quality Control Certificate</div>
+        <div class="edu-place">📍 Sabak Bernam Community College, Selangor</div>
+        <div class="edu-year">2021 – 2023</div>
+        <p>I got my UPU result which is a community college certificate in Sabak Bernam, Selangor and I got the Food Processing and Food Quality Control Certificate course. Through this course, I learned a lot about cooking, baking and cutting. In fact, I had a lot of friends who taught me to persevere until the end and I managed to graduate with a certificate.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <div style="display: flex; justify-content: center;">
+  <img src="images/peta_malaysia.png" usemap="#malaysia-map" style="display: block; margin: 0 auto;">
+  </div>
+
+    <map name="malaysia-map">
+    <area target="_blank" alt="Sabak Bernam Community College, Selangor" title="Sabak Bernam Community College, Selangor" href="https://kksabakbernam.mypolycc.edu.my/" coords="79,149,101,138" shape="rect">
+    <area target="_blank" alt="UiTM Seri Iskandar, Perak" title="UiTM Seri Iskandar, Perak" href="https://perak.uitm.edu.my/index.php/en/" coords="79,98,14" shape="circle">
+    <area target="_blank" alt="UiTM Rembau, Negeri Sembilan" title="UiTM Rembau, Negeri Sembilan" href="https://nsembilan.uitm.edu.my/rembau/" coords="117,161,131,164,136,177,112,181,109,175" shape="poly">
+  </map>
+
+</div>
+<a href="#top">Back to top</a>
+<br>
+<a href="#diploma">Go to Diploma</a>
+<br>
+<a href="#pre-diploma">Go to Pre-Diploma</a>
+
+<footer>
+  Education · Wan Nurfatihah Binti Ibnan @ Abanan · UiTM Rembau, Negeri Sembilan
+</footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
+
+<script>
+  function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+  }
+</script>
+
+  </body>
+</html>

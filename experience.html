@@ -1,0 +1,265 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="biodata_style.css">
+
+  <style>
+    /* Full width page */
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page {
+      max-width: 100%;
+      width: 100%;
+      padding: 3rem 3rem 5rem;
+    }
+    .section {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    /* Hero align left */
+    .hero { align-items: flex-start; text-align: left; }
+    .hero-text { text-align: left; }
+    .tags { justify-content: flex-start; }
+
+    /* Internship card: two-column — text left, photos right */
+    .internship-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .internship-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .internship-card p {
+      font-size: 0.92rem;
+      color: #000000;
+      margin-bottom: 0.85rem;
+      line-height: 1.75;
+      text-align: left;
+    }
+    .internship-card p:last-child { margin-bottom: 0; }
+    .internship-card strong { color: #000000; font-weight: 500; }
+
+    .internship-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .internship-icon { font-size: 1.4rem; }
+    .internship-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #000000;
+    }
+
+    /* Photo grid on the right */
+    .photo-grid {
+      flex: 0 0 380px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .photo-slot {
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #faf7f6;
+      color: #000000;
+      font-size: 0.8rem;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .photo-slot .slot-icon { font-size: 2rem; }
+    .photo-slot .slot-label { font-size: 0.78rem; color: #000000; }
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0; left: 0;
+      border-radius: 8px;
+    }
+    .photo-slot input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 680px) {
+      .internship-card { flex-direction: column; }
+      .photo-grid { flex: 1 1 auto; width: 100%; grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* LIGHTBOX CSS */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Experience</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="biodata_resume.html">Biodata</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
+
+</nav> <div class="audio-container">
+    <span class="audio-label">🎵 BGM:</span>
+    <audio controls autoplay loop id="myAudio">
+        <source src="audio/smileflower.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="avatar" style="background: #fdf0eb; border-color: #c48a7a; font-size: 2.5rem;">🌟</div>
+    <div class="hero-text">
+      <h1>Experience</h1>
+      <p class="nickname">Internship Journey of Wan Nurfatihah</p>
+      <div class="tags">
+        <span class="tag">Internship Community Collage</span>
+        <span class="tag">Internship UiTM</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="internship">
+    <div class="section-label">Internship Community Collage</div>
+    <div class="internship-card">
+      <div class="internship-content">
+        <div class="internship-header">
+          <span class="internship-icon">👩‍🍳</span>
+          <span class="internship-title">Internship in Taco Bell</span>
+        </div>
+        <p>I did a <b>community college internship</b> at <sub>Taco Bell Bandar Baru Bangi</sub> for 5 months. Here, I was able to learn a lot because</p>
+        <p>I was in every department such as cashier, making food, frying and topping raw materials. I am happy because I was able to work with very good staff and managers who understood me.</p>
+        <p>Here, I learned that we can solve all things ourselves and think about something before doing it. I gained a lot during my internship here because I was <i>able to communicate and work in a professional and good environment.</i></p>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-slot">
+          <img src="images/tacobell.jpg" alt="Intern photo 1" onclick="openLightbox(this.src)">
+        </div>
+        <div class="photo-slot">
+          <img src="images/tacobell2.jpg" alt="Intern photo 2" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="internship">
+    <div class="section-label">Internship UiTM</div>
+    <div class="internship-card">
+      <div class="internship-content">
+        <div class="internship-header">
+          <span class="internship-icon">💻</span>
+          <span class="internship-title">Internship in UiTM Rembau</span>
+        </div>
+        <p>I did a diploma internship at the <i>Bahagian Penyelidikan, Jaringan Industri, Masyarakat dan Alumni (BPJIM&A)</i> for 8 weeks. I learned how to organize, enter data digitally.</p>
+        <p>In fact, I was able to use what I had learned during my industrial training. During my industrial training, I was able to <b>improve my communication skills and software skills.</b></p>
+        <p>I was also able to learn how to create a <sub>project tracker</sub> in Excel to ensure that each project was completed quickly and there was a percentage for staff to know how much was completed.</p>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-slot">
+          <img src="images/internn.jpg" alt="Intern photo 1" onclick="openLightbox(this.src)">
+        </div>
+        <div class="photo-slot">
+          <img src="images/staff.jpg" alt="Intern photo 2" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<a href="#top">Back to top</a>
+
+<footer>
+  Experience · Wan Nurfatihah Binti Ibnan @ Abanan · UiTM Rembau, Negeri Sembilan
+</footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
+
+<script>
+  function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active'); // Activates 'display: flex' via CSS class mapping
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
